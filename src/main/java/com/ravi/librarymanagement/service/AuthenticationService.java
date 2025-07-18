@@ -3,6 +3,7 @@ package com.ravi.librarymanagement.service;
 import com.ravi.librarymanagement.DTO.LoginRequestDTO;
 import com.ravi.librarymanagement.DTO.LoginResponseDTO;
 import com.ravi.librarymanagement.DTO.RegisterRequestDTO;
+import com.ravi.librarymanagement.JWT.JwtService;
 import com.ravi.librarymanagement.model.User;
 import com.ravi.librarymanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class AuthenticationService {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    JwtService jwtService;
+    private JwtService jwtService;
 
 
     public User registerNormalUser(RegisterRequestDTO registerRequestDTO) {
