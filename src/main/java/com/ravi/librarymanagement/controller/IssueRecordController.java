@@ -14,12 +14,12 @@ public class IssueRecordController {
     IssueRecordService issueRecordService;
 
     @PostMapping("/issuethebook/{bookid}")
-    public ResponseEntity<IssueRecord> issueTheBook(@PathVariable Long bookId){
+    public ResponseEntity<IssueRecord> issueTheBook(@PathVariable(name = "bookid") Long bookId){
         return  ResponseEntity.ok(issueRecordService.issueTheBook(bookId));
     }
 
     @PostMapping("/returnthebook/{issuerecordid}")
-    public ResponseEntity<IssueRecord> returnTheBook(@PathVariable Long issueRecordId){
+    public ResponseEntity<IssueRecord> returnTheBook(@PathVariable(name = "issuerecordid") Long issueRecordId){
         return ResponseEntity.ok(issueRecordService.returnTheBook(issueRecordId));
     }
 }
