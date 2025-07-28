@@ -38,3 +38,24 @@ VALUES ('admin', 'admin@gmail.com', '$2y$10$7qxJYHHDYENm2K1YMVW5iu5H2s5nBl0A4BQf
 -- Assign roles to the user (replace 1 with correct user_id if needed)
 INSERT INTO user_roles (user_id, role) 
 VALUES (1, 'ROLE_USER'), (1, 'ROLE_ADMIN');
+
+```
+## 📑 API Endpoints Overview
+
+These are the main API endpoints exposed by the **Library Management System**.
+
+| Method | Endpoint                             | Description                      | Access Role     |
+|--------|--------------------------------------|----------------------------------|------------------|
+| `POST` | `/auth/registernormaluser`           | Register a normal user           | Public           |
+| `POST` | `/auth/login`                        | Login (Admin/User)               | Public           |
+| `POST` | `/admin/registeradminuser`           | Create new admin user            | Admin            |
+| `POST` | `/books/addbook`                     | Add a new book                   | Admin            |
+| `GET`  | `/books/getallbooks`                 | Retrieve all books               | Authenticated    |
+| `GET`  | `/books/getbookbyid/{id}`            | Get book details by ID           | Authenticated    |
+| `POST` | `/issuerecords/issuethebook/{id}`    | Issue a book by ID               | Authenticated    |
+| `POST` | `/issuerecords/returnthebook/{id}`   | Return a book by ID              | Authenticated    |
+
+---
+
+
+
